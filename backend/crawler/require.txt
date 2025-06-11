@@ -1,0 +1,11 @@
+webdriver-manager
+beautifulsoup4
+pdfkit
+pypdf
+selenium
+pandas
+openpyxl
+
+# wkhtmltopdf for pdfkit
+# link: https://wkhtmltopdf.org/downloads.html
+# path: "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe", line 20 in crawler.py

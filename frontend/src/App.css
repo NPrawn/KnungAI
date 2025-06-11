@@ -1,0 +1,169 @@
+/* 제목(공주대학교 챗봇 글씨부분) */
+h1 {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 전체 레이아웃 */
+.chat-container {
+  display: flex;
+  flex-direction: column; /* 수직 방향 */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 1rem 1rem;
+  padding-bottom: 8rem;
+  box-sizing: border-box;
+}
+
+/* 대화박스 */
+.chat-box {
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 안내문구 */
+.reset-hint {
+  color: #cdcdcd;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reset-hint.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤바 둥글게 깎으려고 추가 */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  transition: margin-top 0.8s ease;
+}
+/* 입력창 움직이는 애니메이션용 */
+.chat-container .input-area {
+  margin-top: 0;
+}
+.chat-container.has-chat .input-area {
+  margin-top: 10px;
+}
+.input-area input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 2px solid #878787;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.input-area button {
+  padding: 0.8rem 1.2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.input-area button:hover {
+  background: #0056b3;
+}
+
+/* 메시지 정렬 */
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.message-wrapper.user {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.message-wrapper.user .message {
+  background-color: #d1e7ff;
+}
+.message-wrapper.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 말풍선 */
+.message {
+  max-width: 80%;
+  padding: 0.5rem 0.8rem;
+  background-color: #e9ecef;
+  border-radius: 12px;
+  word-break: break-word;
+}
+
+/* 챗봇 프로필. 크눙이 얼굴 */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 4px;
+}
+
+/* 텍스트 */
+.name {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.text {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.reset-button {
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: #cfcfcf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #878787;
+}

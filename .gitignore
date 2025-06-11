@@ -1,0 +1,27 @@
+# Python 관련
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# 가상환경
+.venv/
+venv/
+
+# 환경변수 및 민감정보
+.env
+.env
+
+# Google 서비스 계정 키
+*.json
+
+# VSCode 설정파일
+.vscode/
+
+# 임시 실행파일
+tempCodeRunnerFile.*
+
+# MacOS 시스템파일
+.DS_Store
